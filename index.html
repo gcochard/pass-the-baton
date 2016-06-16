@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
+        <script type="text/javascript">
+            var client = new WebTorrent();
+            var magnetURI = window.location.hash.slice(1);
+            if(magnetURI){
+                client.add(magnetURI, function(torrent){
+                    torrent.files.forEach(function(file){
+                        file.appendTo('body');
+                    });
+                });
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
