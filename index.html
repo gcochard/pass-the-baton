@@ -3,7 +3,7 @@
         <script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
         <script type="text/javascript">
             var client = new WebTorrent();
-            var magnetURI = window.location.hash.slice(1);
+            var magnetURI = window.location.hash.slice(1) || 'magnet:?xt=urn:btih:2396739b8c10264402c494b8a6b4dfe799a5d2cb&dn=readme.md&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com';
             if(magnetURI){
                 client.add(magnetURI, function(torrent){
                     torrent.files.forEach(function(file){
